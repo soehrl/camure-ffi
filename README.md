@@ -134,5 +134,4 @@ camure_member_destroy(member);
 ```
 
 ## Versioning
-This library is versioned independently of the camure library.
-The project uses [semantic versioning](https://semver.org/).
+The project uses [semantic versioning](https://semver.org/) and is versioned independently of the camure library.
