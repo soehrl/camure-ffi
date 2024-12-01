@@ -5,6 +5,13 @@ This repository contains the foreign function interface for the [camure library]
 All exposed functions wrap a corresponding function in the camure library (with few exceptions).
 Thus, see the [camure documentation](https://docs.rs/camure/) for more information on the functions.
 
+### Building
+This project uses [CMake](https://cmake.org/) and requires [cargo to be installed](https://doc.rust-lang.org/cargo/getting-started/installation.html).
+The library can then be build using
+```sh
+mkdir build && cd build && cmake .. && cmake --build .
+```
+
 ### Naming Conventions
 All identifiers have been prefixed with `camure_` to avoid name conflicts with other libraries.
 The names of structs have been converted to `snake_case` with a `_t` suffix to conform to the C naming conventions.
