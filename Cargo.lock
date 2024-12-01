@@ -35,9 +35,9 @@ checksum = "1fd0f2584146f6f2ef48085050886acf353beff7305ebd1ae69500e27c67f64b"
 
 [[package]]
 name = "camure"
-version = "0.1.0"
+version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1c22731e61d7241ebe4057f1b7e3069956e24d30ad6f1a3e06556a1ae06da4c9"
+checksum = "ff3f62ed1fb5afd82dd7188c83653e927f47bab4635e674dea9188a35ac1c921"
 dependencies = [
  "ahash",
  "crossbeam",
