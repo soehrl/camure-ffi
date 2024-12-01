@@ -1,0 +1,12 @@
+[package]
+name = "camure-ffi"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["staticlib"]
+
+[dependencies]
+camure = "0.1.0"
+# tracing = "0.1.41"
+# tracing-subscriber = "0.3.19"
