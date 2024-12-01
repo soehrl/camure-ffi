@@ -7,17 +7,33 @@ Thus, see the [camure documentation](https://docs.rs/camure/) for more informati
 
 ### Naming Conventions
 All identifiers have been prefixed with `camure_` to avoid name conflicts with other libraries.
-The names of structs have been converted to `snake\_case` with a `\_t` suffix to conform to the C naming conventions.
+The names of structs have been converted to `snake_case` with a `_t` suffix to conform to the C naming conventions.
 Member functions are prefixed with the name of the struct they belong to (without the '\_t' suffix).
 
 ### Differences to the Rust API
 * The C API only supports IPv4 addresses and corresponding functions have the `_ipv4` suffix.
 * The C API only exposes simplified message writing and reading functions.
-  `camure_broadcast_group_sender_send_message(camure_broadcast_group_sender_t *broadcast_group, uint8_t *message, uint64_t message_len)` is roughtly equivalent to 
+  ```c++
+  bool camure_broadcast_group_sender_send_message(
+      camure_broadcast_group_sender_t *broadcast_group,
+      uint8_t *message,
+      uint64_t message_len
+  );
+  ```
+  is roughtly equivalent to 
   ```rust
   sender.write_message().write_all(message)
   ```
-  and `camure_broadcast_group_receiver_recv_message(camure_broadcast_group_receiver_t *receiver, const uint8_t *message, uint64_t max_message_len, uint64_t* message_len)` is roughly equivalent to
+  and
+  ```c++
+  bool camure_broadcast_group_receiver_recv_message(
+      camure_broadcast_group_receiver_t *receiver,
+      const uint8_t *message,
+      uint64_t max_message_len,
+      uint64_t* message_len
+  )
+  ```
+  is roughly equivalent to
   ```rust
   let mut message = receiver.recv().read();
   let message_len = message.read(buffer);
