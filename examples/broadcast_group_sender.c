@@ -28,7 +28,7 @@ int main(int argc, char* argv[]) {
         printf("Session started\n");
     }
 
-    camure_broadcast_group_sender_t* sender = camure_coordinator_create_broadcast_group(coordinator);
+    camure_broadcast_group_sender_t* sender = camure_coordinator_create_broadcast_group(coordinator, 0);
     if (sender == NULL) {
         printf("Failed to create broadcast group\n");
         return 1;

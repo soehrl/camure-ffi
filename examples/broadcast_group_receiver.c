@@ -22,7 +22,7 @@ int main(int argc, char* argv[]) {
         printf("Session joined\n");
     }
 
-    camure_broadcast_group_receiver_t* receiver = camure_member_join_broadcast_group(member, 1);
+    camure_broadcast_group_receiver_t* receiver = camure_member_join_broadcast_group(member, 0);
     if (receiver == NULL) {
         printf("Failed to join broadcast group\n");
         return 1;

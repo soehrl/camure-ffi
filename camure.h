@@ -56,11 +56,11 @@ camure_coordinator_start_session_ipv4(const camure_socket_addr_ipv4_t *bind_addr
 
 /// https://docs.rs/camure/latest/camure/session/struct.Coordinator.html#method.create_barrier_group
 camure_barrier_group_coordinator_t *
-camure_coordinator_create_barrier_group(camure_coordinator_t *coordinator);
+camure_coordinator_create_barrier_group(camure_coordinator_t *coordinator, camure_group_id_t group_id);
 
 /// https://docs.rs/camure/latest/camure/session/struct.Coordinator.html#method.create_broadcast_group
 camure_broadcast_group_sender_t *
-camure_coordinator_create_broadcast_group(camure_coordinator_t *coordinator);
+camure_coordinator_create_broadcast_group(camure_coordinator_t *coordinator, camure_group_id_t group_id);
 
 // Member functions
 void camure_member_destroy(camure_member_t *member);

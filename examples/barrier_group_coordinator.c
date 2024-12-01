@@ -28,7 +28,7 @@ int main(int argc, char* argv[]) {
         printf("Session started\n");
     }
 
-    camure_barrier_group_coordinator_t* barrier_group = camure_coordinator_create_barrier_group(coordinator);
+    camure_barrier_group_coordinator_t* barrier_group = camure_coordinator_create_barrier_group(coordinator, 0);
     if (barrier_group == NULL) {
         printf("Failed to create barrier group\n");
         return 1;

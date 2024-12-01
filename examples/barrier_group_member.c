@@ -22,7 +22,7 @@ int main(int argc, char* argv[]) {
         printf("Session joined\n");
     }
 
-    camure_barrier_group_member_t* barrier_group = camure_member_join_barrier_group(member, 1);
+    camure_barrier_group_member_t* barrier_group = camure_member_join_barrier_group(member, 0);
     if (barrier_group == NULL) {
         printf("Failed to join barrier group\n");
         return 1;

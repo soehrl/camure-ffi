@@ -32,9 +32,10 @@ pub extern "C" fn camure_coordinator_destroy(coordinator: *mut Coordinator) {
 #[no_mangle]
 pub extern "C" fn camure_coordinator_create_barrier_group(
     coordinator: *mut camure::session::Coordinator,
+    group_id: GroupId,
 ) -> *mut BarrierGroupCoordinator {
     let coordinator = unsafe { &mut *coordinator };
-    match coordinator.create_barrier_group(None) {
+    match coordinator.create_barrier_group(Some(group_id)) {
         Ok(barrier_group) => Box::into_raw(Box::new(barrier_group)),
         Err(_) => std::ptr::null_mut(),
     }
@@ -43,9 +44,10 @@ pub extern "C" fn camure_coordinator_create_barrier_group(
 #[no_mangle]
 pub extern "C" fn camure_coordinator_create_broadcast_group(
     coordinator: *mut camure::session::Coordinator,
+    group_id: GroupId,
 ) -> *mut BroadcastGroupSender {
     let coordinator = unsafe { &mut *coordinator };
-    match coordinator.create_broadcast_group(None) {
+    match coordinator.create_broadcast_group(Some(group_id)) {
         Ok(broadcast_group) => Box::into_raw(Box::new(broadcast_group)),
         Err(_) => std::ptr::null_mut(),
     }
